@@ -60,5 +60,13 @@ return {
 	color_scheme = 'Monokai Dark (Gogh)',
 
 	default_prog = default_prog,
-    launch_menu = launch_menu
+    launch_menu = launch_menu,
+
+	leader = { key = 'l', mods = 'CTRL' }
+
+	keys = {
+		-- New/close pane
+		{ key = 'c', mods = 'LEADER', action = wezterm.action { SpawnTab = 'CurrentPaneDomain' } }, 
+		{ key = 'x', mods = 'LEADER', action = wezterm.action { CloseCurrentPane = { confirm = true } } },
+	}
 }
