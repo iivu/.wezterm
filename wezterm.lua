@@ -52,7 +52,7 @@ end )
 
 return {
 	font = wezterm.font_with_fallback { 'JetBrains Mono' },
-	font_size = 14,
+	font_size = 10,
 	freetype_load_target = "Mono",
 
 	window_background_opacity = 0.8,
@@ -62,7 +62,7 @@ return {
 	default_prog = default_prog,
     launch_menu = launch_menu,
 
-	leader = { key = 'l', mods = 'CTRL' }
+	leader = { key = 'l', mods = 'CTRL' },
 
 	keys = {
 		-- New/close pane
