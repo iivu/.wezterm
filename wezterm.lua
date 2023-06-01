@@ -52,7 +52,11 @@ end )
 
 return {
 	font = wezterm.font_with_fallback { 'JetBrains Mono' },
+<<<<<<< HEAD
 	font_size = 12,
+=======
+	font_size = 10,
+>>>>>>> f0231b765293d61118efca4ed87a5d931aa8dc97
 	freetype_load_target = "Mono",
 
 	window_background_opacity = 0.8,
