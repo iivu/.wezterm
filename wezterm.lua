@@ -52,7 +52,7 @@ end )
 
 return {
 	font = wezterm.font_with_fallback { 'JetBrains Mono' },
-	font_size = 14,
+	font_size = 12,
 	freetype_load_target = "Mono",
 
 	window_background_opacity = 0.8,
@@ -62,11 +62,20 @@ return {
 	default_prog = default_prog,
     launch_menu = launch_menu,
 
-	leader = { key = 'l', mods = 'CTRL' }
+	leader = { key = ',', mods = 'CTRL' },
 
 	keys = {
-		-- New/close pane
-		{ key = 'c', mods = 'LEADER', action = wezterm.action { SpawnTab = 'CurrentPaneDomain' } }, 
-		{ key = 'x', mods = 'LEADER', action = wezterm.action { CloseCurrentPane = { confirm = true } } },
-	}
+		-- New/close tab
+		{ key = 't', mods = 'LEADER', action = wezterm.action.SpawnTab 'CurrentPaneDomain' }, 
+		{ key = 'x', mods = 'LEADER', action = wezterm.action.CloseCurrentTab { confirm = true } },
+        -- New/close pane
+        { key = 'h', mods = 'LEADER', action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' } },
+        { key = 'v', mods = 'LEADER', action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' } },
+        { key = 'c', mods = 'LEADER', action = wezterm.action.CloseCurrentPane { confirm = true } },
+        -- Pane navigation
+        { key = 'l', mods = 'CMD', action = wezterm.action.ActivatePaneDirection 'Left' },
+        { key = 'h', mods = 'CMD', action = wezterm.action.ActivatePaneDirection 'Right' },
+        { key = 'k', mods = 'CMD', action = wezterm.action.ActivatePaneDirection 'Up' },
+        { key = 'j', mods = 'CMD', action = wezterm.action.ActivatePaneDirection 'Down' },
+	},
 }
