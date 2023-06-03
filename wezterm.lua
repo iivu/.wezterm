@@ -58,7 +58,7 @@ return {
 	window_background_opacity = 0.8,
 
 	color_scheme = 'Monokai Dark (Gogh)',
-
+	default_cursor_style = 'BlinkingBar',
 	default_prog = default_prog,
     launch_menu = launch_menu,
 
