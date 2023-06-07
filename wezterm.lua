@@ -4,6 +4,7 @@ local wezterm = require 'wezterm'
 
 local launch_menu = {}
 local default_prog = {}
+local font_size = 0
 
 -- Shell
 if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
@@ -30,6 +31,13 @@ else
     default_prog = { 'zsh', '-l' }
 end
 
+-- Font size
+if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
+	font_size = 10 
+else 
+	font_size = 12
+end
+
 -- Title
 function basename( s )
     return string.gsub( s, '(.*[/\\])(.*)', '%2' )
@@ -52,7 +60,7 @@ end )
 
 return {
 	font = wezterm.font_with_fallback { 'JetBrains Mono' },
-	font_size = 12,
+	font_size = font_size,
 	freetype_load_target = "Mono",
 
 	window_background_opacity = 0.8,
